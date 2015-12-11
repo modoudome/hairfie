@@ -1,0 +1,14 @@
+.image-container {
+    width: 50%;
+    height: 200px;
+    line-height: 200px;
+    border: dashed 2px #adadad;
+    transition: 0.5s ;
+    text-align: center;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+
+.image-container-hover {
+    background: #f7f7f7;
+    border-color: #ff4236;
+}
