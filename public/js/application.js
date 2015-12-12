@@ -10,7 +10,6 @@ $(function() {
             $('.image-container').html('<span>GLISSER VOTRE IMAGE</span>');
         },
 
-
         dragover : function (e) {
             $('.image-container')
                 .addClass('image-container-hover');
