@@ -8,26 +8,80 @@ body {
 .row {
     width: 100%;
     height: auto;
+    display: block;
+}
+
+.image-preview {
+    width: 128px;
+    height: 128px;
+    border: solid 1px #000000;
+    display: inline-block;
 }
 
 .image-container {
-    width: 50%;
-    height: 200px;
-    line-height: 200px;
+
+    width: 400px;
+    height: 400px;
+    line-height: 400px;
     border: dashed 2px #adadad;
     transition: 0.5s ;
     text-align: center;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     margin: auto;
+    display: inline-block;
 }
 
+
 .image-container-hover {
-    background: #f7f7f7;
-    border-color: #ff4236;
+    background: #f4f4f4;
+    border-color: #0200ff;
+}
+
+.image-container img {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 .title {
-    text-align: center;
     letter-spacing: 2px;
     color: #003f4d;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.button {
+    height: 58px;
+    line-height: 58px;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 0;
+    display: inline-block;
+    border: none;
+    outline:none;
+    transition: .5s ;
+}
+
+.button.button-primary {
+    background: #007381;
+}
+
+.button.button-primary:hover {
+    background: #0091a3;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+[mag-thumn] {
+    position: relative;
 }

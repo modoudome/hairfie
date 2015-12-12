@@ -8,19 +8,43 @@
     <meta charset="UTF-8">
     <title>Hairfie</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../public/magnificent/src/css/mag.css">
+    <link rel="stylesheet" href="../public/magnificent/src/theme/default.css">
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h2 class="title">Hairfie upload</h2>
+    <div class="container text-center">
+        <h2 class="title text-uppercase text-center">Hairfie upload</h2>
         <div class="row">
-            <form action="index.html" class="image-container"></form>
+            <form action="upload.php" class="image-container"></form>
         </div>
-        <div class="row"></div>
+
+        <br>
+
+        <div class="row">
+            <div id="mag-thumb" mag-thumb="outer-drag"></div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div id="mag-zoom" mag-zoom="outer-drag"></div>
+        </div>
+
+        <br>
+        <div class="row">
+            <button class="button button-primary">ENVOYER</button>
+        </div>
     </div>
-    <br>
-<script src="../public/jquery/jquery.min.js"></script>
-<script src="../public/dropzone/dropzone.js"></script>
-<script src="../public/js/application.js"></script>
+    <script src="../public/jquery/jquery.min.js"></script>
+    <script src="../public/dropzone/dropzone.js"></script>
+    <script src="../bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="../bower_components/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+    <script src="../bower_components/prevent-ghost-click/PreventGhostClick.js"></script>
+    <script src="../bower_components/hammerjs/hammer.min.js"></script>
+    <script src="../public/magnificent/src/js/mag.js"></script>
+    <script src="../public/magnificent/src/js/mag-jquery.js"></script>
+    <script src="../public/magnificent/src/js/mag-control.js"></script>
+    <script src="../public/js/application.js"></script>
 </body>
 </html>
