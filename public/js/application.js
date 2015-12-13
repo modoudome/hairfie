@@ -30,7 +30,7 @@ $(function() {
                     zoomType: "window",
                     cursor: "crosshair",
                     zoomWindowFadeIn: 100,
-                    zoomWindowFadeOut: 15000,
+                    zoomWindowFadeOut: 150,
                     zoomWindowPosition: "mag-thumb",
                     zoomWindowHeight: 200,
                     zoomWindowWidth:200,
@@ -50,7 +50,7 @@ $(function() {
                                 type: 'post',
                                 success: function( result ) {
                                     console.log( result );
-                                    alert("ff");
+                                    alert("success");
                                 },
                                 error:function(){
                                     alert("error");
@@ -58,7 +58,7 @@ $(function() {
                             });
                         }
                     });
-                },5000);
+                },2000);
 
                 /*$('#mag-thumb')
                     .html('<img src="' + data.srcElement.result+'">');*/
