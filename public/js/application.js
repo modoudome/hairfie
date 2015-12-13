@@ -25,10 +25,43 @@ $(function() {
             reader.addEventListener('load', function (data) {
                 dropzoneOptions.insertImage(file);
                 $('.image-container')
-                    .html('<img src="' + data.srcElement.result+'">');
+                    .html('<img src="' + data.srcElement.result+'" id="zoom_01" data-zoom_image="'+data.srcElement.result+'">');
+                $('#zoom_01').elevateZoom({
+                    zoomType: "window",
+                    cursor: "crosshair",
+                    zoomWindowFadeIn: 100,
+                    zoomWindowFadeOut: 15000,
+                    zoomWindowPosition: "mag-thumb",
+                    zoomWindowHeight: 200,
+                    zoomWindowWidth:200,
+                    borderSize: 0,
+                    easing:true
+                });
+                setTimeout(function(){
+                    var capture = {};
+                    var target = $(".zoomWindow");
+                    html2canvas(target, {
+                        onrendered: function(canvas) {
+                            capture.img = canvas.toDataURL( "image/png" );
+                            capture.data = { 'image' : capture.img };
+                            $.ajax({
+                                url: "/src/ajax.php",
+                                data: capture.data,
+                                type: 'post',
+                                success: function( result ) {
+                                    console.log( result );
+                                    alert("ff");
+                                },
+                                error:function(){
+                                    alert("error");
+                                }
+                            });
+                        }
+                    });
+                },5000);
 
-                $('#mag-thumb')
-                    .html('<img src="' + data.srcElement.result+'">');
+                /*$('#mag-thumb')
+                    .html('<img src="' + data.srcElement.result+'">');*/
             });
             reader.readAsDataURL(file);
         },
@@ -40,6 +73,7 @@ $(function() {
             };
             dropzoneOptions.images.push(image);
             dropzoneOptions.autoIncrement++;
+            return image;
         },
 
         getImages : function () {
